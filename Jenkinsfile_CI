@@ -6,6 +6,7 @@ pipeline {
 		stage('Build Porject and Publish Image to GitHub') {
 			steps {
 			sh """
+			export VERSION=${VERSION}
 			scp D:\Test\Dockerfile user@server:folder
 			cd folder
 			docker build -t test:${VERSION} .
