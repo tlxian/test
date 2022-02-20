@@ -6,6 +6,7 @@ pipeline {
 		stage('Deploy and run the Docker Image from Github') {
 			steps {
 			sh """
+			export VERSION=${VERSION}
 			scp D:\Test\docker-compose.yml user@server:folder
 			cd folder
 			docker-compose up 
