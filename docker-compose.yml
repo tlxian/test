@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+ web:
+  image: "ghcr.io/tlxian/test:${VERSION}"
+  container_name: test
+  tty: true
+  stdin_open: true
+  ports:
+   - 8080:8080
+        
