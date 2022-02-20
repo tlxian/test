@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+ web:
+  image: "ghcr.io/tlxian/boot:1.0"
+  container_name: boot
+  tty: true
+  stdin_open: true
+  ports:
+   - 8080:8080
+        

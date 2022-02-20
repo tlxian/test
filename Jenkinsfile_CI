@@ -1,0 +1,21 @@
+def VERSION = BUILD_NUMBER
+
+pipeline {
+	agent any
+	stages {
+		stage('Build Porject and Publish Image to GitHub') {
+			steps {
+			sh """
+			scp D:\Test\Dockerfile user@server:folder
+			cd folder
+			docker build -t test:${VERSION} .
+			docker login ghcr.io -u sonetee@hotmail.com -p 123
+			docker tag test:${VERSION} ghcr.io/tlxian/test:${VERSION}
+			docker push ghcr.io/tlxian/test:${VERSION}
+			"""
+			}
+		
+		}
+	
+	}
+}
