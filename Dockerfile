@@ -24,7 +24,9 @@ RUN	   apt-get update \
 	&& mvn -f ./test01/pom.xml clean package 
 
 #Run jar file	
-CMD ["java","-jar","./test01/target/demo-0.0.1-SNAPSHOT.jar"]
+#CMD ["java","-jar","./test01/target/demo-0.0.1-SNAPSHOT.jar"]
+
+#EXPOSE 8080
 
 
 
